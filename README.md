@@ -313,13 +313,14 @@ Estos scripts son herramientas de desinstalación independientes y no están afi
 
 Si tienes preguntas, problemas o sugerencias:
 
-- Abre un [Issue](https://github.com/tu-usuario/riot-uninstaller/issues)
-- Contribuye con un [Pull Request](https://github.com/tu-usuario/riot-uninstaller/pulls)
+- Abre un [Issue](https://github.com/slider66/riot-uninstaller/issues)
+- Contribuye con un [Pull Request](https://github.com/slider66/riot-uninstaller/pulls)
 
 ---
 
 **⭐ Si estos scripts te fueron útiles, considera darle una estrella al repositorio!**
 
 ---
+
 
 Hecho con ❤️ para la comunidad
