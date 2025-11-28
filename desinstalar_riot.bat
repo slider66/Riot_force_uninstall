@@ -30,7 +30,22 @@ echo.
 echo Iniciando proceso de desinstalacion...
 
 echo.
-echo [1/6] Deteniendo procesos de Riot Games...
+echo [1/7] Creando Punto de Restauracion del Sistema...
+echo ========================================
+echo.
+echo Esto puede tardar unos momentos...
+powershell -Command "Checkpoint-Computer -Description 'Antes de Desinstalar Riot' -RestorePointType 'MODIFY_SETTINGS'" >nul 2>&1
+if %errorLevel% equ 0 (
+    echo [OK] Punto de restauracion creado exitosamente
+) else (
+    echo [AVISO] No se pudo crear el punto de restauracion.
+    echo Asegurate de que la Proteccion del Sistema este habilitada.
+    echo Continuando con la desinstalacion...
+)
+timeout /t 2 /nobreak >nul
+
+echo.
+echo [2/7] Deteniendo procesos de Riot Games...
 echo ========================================
 
 :: Detener todos los procesos relacionados
@@ -49,7 +64,7 @@ echo [OK] %procesos_detenidos% procesos detenidos
 timeout /t 2 /nobreak >nul
 
 echo.
-echo [2/6] Deteniendo y eliminando servicios...
+echo [3/7] Deteniendo y eliminando servicios...
 echo ========================================
 
 :: Detener y eliminar servicios de Vanguard
@@ -65,7 +80,7 @@ if %errorLevel% equ 0 (echo [OK] Servicio vgk eliminado) else (echo [INFO] Servi
 timeout /t 2 /nobreak >nul
 
 echo.
-echo [3/6] Desinstalando aplicaciones...
+echo [4/7] Desinstalando aplicaciones...
 echo ========================================
 
 :: Buscar y ejecutar desinstaladores oficiales
@@ -90,7 +105,7 @@ if exist "C:\Riot Games\Riot Client\RiotClientServices.exe" (
 timeout /t 2 /nobreak >nul
 
 echo.
-echo [4/6] Eliminando carpetas de instalacion...
+echo [5/7] Eliminando carpetas de instalacion...
 echo ========================================
 
 :: Eliminar carpetas principales
@@ -153,7 +168,7 @@ if exist "%TEMP%\Riot Games\" (
 timeout /t 2 /nobreak >nul
 
 echo.
-echo [5/6] Limpiando registro de Windows...
+echo [6/7] Limpiando registro de Windows...
 echo ========================================
 
 :: Eliminar claves del registro
@@ -190,7 +205,7 @@ echo [OK] %entradas_eliminadas% entradas de desinstalacion eliminadas
 timeout /t 2 /nobreak >nul
 
 echo.
-echo [6/6] Limpieza final...
+echo [7/7] Limpieza final...
 echo ========================================
 
 :: Eliminar accesos directos

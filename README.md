@@ -4,6 +4,8 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Batch](https://img.shields.io/badge/language-Batch-blue)
 
+[🇺🇸 English Version](README_EN.md)
+
 Herramientas completas para la desinstalación profunda de Riot Games (Valorant, League of Legends, Riot Client) y verificación de componentes residuales en el kernel de Windows.
 
 ## 📋 Tabla de Contenidos
@@ -21,6 +23,7 @@ Herramientas completas para la desinstalación profunda de Riot Games (Valorant,
 ## ✨ Características
 
 ### Script de Desinstalación (`desinstalar_riot.bat`)
+
 - ✅ Desinstalación completa de todos los componentes de Riot Games
 - ✅ Eliminación de drivers del kernel (Vanguard)
 - ✅ Limpieza profunda del registro de Windows
@@ -30,6 +33,7 @@ Herramientas completas para la desinstalación profunda de Riot Games (Valorant,
 - ✅ Opción de reinicio automático
 
 ### Script de Verificación (`verificar_riot_kernel.bat`)
+
 - ✅ Verificación de servicios en el sistema
 - ✅ Detección de drivers en memoria
 - ✅ Búsqueda de archivos .sys residuales
@@ -46,6 +50,7 @@ Herramientas completas para la desinstalación profunda de Riot Games (Valorant,
 ## 📥 Instalación
 
 1. **Descarga los scripts:**
+
    ```bash
    git clone https://github.com/tu-usuario/riot-uninstaller.git
    cd riot-uninstaller
@@ -98,6 +103,7 @@ verificar_riot_kernel.bat
 **Descripción:** Script principal de desinstalación que elimina todos los componentes de Riot Games.
 
 **Proceso:**
+
 ```
 1. Auto-elevación a administrador
 2. Advertencia y confirmación
@@ -117,6 +123,7 @@ verificar_riot_kernel.bat
 ```
 
 **Salida:**
+
 - `[OK]` - Operación exitosa
 - `[INFO]` - Elemento no encontrado (normal)
 - `[AVISO]` - Algunos archivos no pudieron eliminarse
@@ -127,6 +134,7 @@ verificar_riot_kernel.bat
 **Descripción:** Script de verificación que comprueba la presencia de componentes de Riot en el kernel y sistema.
 
 **Análisis realizado:**
+
 ```
 1. Verificación de servicios (vgc, vgk)
 2. Detección de drivers en memoria
@@ -136,6 +144,7 @@ verificar_riot_kernel.bat
 ```
 
 **Salida:**
+
 - `[SISTEMA LIMPIO]` - No hay componentes de Riot
 - `[ATENCIÓN REQUERIDA]` - Se detectaron componentes residuales
 
@@ -160,11 +169,13 @@ verificar_riot_kernel.bat
 ### ⚠️ Casos Especiales
 
 **Si el script muestra `[AVISO]`:**
+
 - Algunos archivos están en uso
 - Reinicia el PC y ejecuta el script nuevamente
 - Verifica que no haya procesos de Riot activos en el Administrador de Tareas
 
 **Si después de reiniciar siguen apareciendo componentes:**
+
 - Ejecuta el script en **Modo Seguro** de Windows
 - Elimina manualmente los archivos .sys detectados
 - Usa herramientas como `Autoruns` de Sysinternals
@@ -172,6 +183,7 @@ verificar_riot_kernel.bat
 ## 🗑️ Qué se Elimina
 
 ### Aplicaciones
+
 - ✅ Riot Client
 - ✅ Riot Vanguard (Anti-cheat)
 - ✅ Valorant
@@ -180,12 +192,14 @@ verificar_riot_kernel.bat
 - ✅ Todos los componentes relacionados
 
 ### Servicios y Drivers
+
 - ✅ Servicio VGC (Vanguard Client)
 - ✅ Servicio VGK (Vanguard Kernel)
 - ✅ Driver vgk.sys
 - ✅ Driver vgc.sys
 
 ### Archivos y Carpetas
+
 ```
 C:\Riot Games\
 C:\Program Files\Riot Vanguard\
@@ -197,6 +211,7 @@ C:\Program Files (x86)\Riot Vanguard\
 ```
 
 ### Registro de Windows
+
 ```
 HKLM\SOFTWARE\Riot Games
 HKCU\Software\Riot Games
@@ -206,6 +221,7 @@ HKCR\riotclient
 ```
 
 ### Otros
+
 - Accesos directos del escritorio
 - Entradas del menú inicio
 - Cache DNS
@@ -256,7 +272,8 @@ Si acabas de desinstalar pero no has reiniciado, es normal. Los drivers del kern
 
 ### Algunos archivos no se eliminan
 
-**Solución:** 
+**Solución:**
+
 1. Cierra todos los procesos de Riot en el Administrador de Tareas
 2. Reinicia el PC
 3. Ejecuta el script nuevamente
@@ -264,6 +281,7 @@ Si acabas de desinstalar pero no has reiniciado, es normal. Los drivers del kern
 ### Vanguard sigue apareciendo después de reiniciar
 
 **Solución:**
+
 1. Ejecuta el script en Modo Seguro:
    - Presiona `Win + R`
    - Escribe: `msconfig`
@@ -275,6 +293,7 @@ Si acabas de desinstalar pero no has reiniciado, es normal. Los drivers del kern
 ### El script se cierra inmediatamente
 
 **Solución:** El script tiene auto-elevación. Si se cierra, revisa:
+
 1. Que PowerShell esté habilitado
 2. Que UAC (Control de Cuentas de Usuario) esté activo
 3. Ejecuta manualmente como administrador
@@ -292,6 +311,7 @@ Las contribuciones son bienvenidas. Por favor:
 ## 📝 Changelog
 
 ### v1.0.0 (2025-09-30)
+
 - ✨ Release inicial
 - ✅ Script de desinstalación completa
 - ✅ Script de verificación de kernel
@@ -305,7 +325,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## ⚖️ Disclaimer
 
-Estos scripts son herramientas de desinstalación independientes y no están afiliados, respaldados ni asociados con Riot Games de ninguna manera. 
+Estos scripts son herramientas de desinstalación independientes y no están afiliados, respaldados ni asociados con Riot Games de ninguna manera.
 
 **Uso bajo tu propio riesgo.** Los autores no se hacen responsables de ningún daño o pérdida de datos. Asegúrate de entender lo que hacen los scripts antes de ejecutarlos.
 
@@ -321,6 +341,5 @@ Si tienes preguntas, problemas o sugerencias:
 **⭐ Si estos scripts te fueron útiles, considera darle una estrella al repositorio!**
 
 ---
-
 
 Hecho con ❤️ para la comunidad
